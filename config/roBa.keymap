@@ -7,9 +7,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -21,17 +18,12 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            key-positions = <11 10>;
         };
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
             key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
         };
 
         double_quotation {
@@ -43,6 +35,11 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+        };
     };
 
     macros {
@@ -51,6 +48,104 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
+
+        screenshot: screenshot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp KP_NUMBER_3>;
+            label = "SCREENSHOT";
+        };
+
+        volUp: volUp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT &kp PLUS>;
+            label = "VOLUP";
+        };
+
+        valDown: valDown {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT &kp MINUS>;
+            label = "VALDOWN";
+        };
+
+        bigger: bigger {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp PLUS>;
+            label = "BIGGER";
+        };
+
+        smaller: smaller {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp MINUS>;
+            label = "SMALLER";
+        };
+
+        build: build {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp B>;
+            label = "BUILD";
+        };
+
+        run: run {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp R>;
+            label = "RUN";
+        };
+
+        indent: indent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp I>;
+            label = "INDENT";
+        };
+
+        selectAll: selectAll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp A>;
+            label = "SELECTALL";
+        };
+
+        clean: crean {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp K>;
+            label = "CREAN";
+        };
+
+        open: open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp O>;
+            label = "OPEN";
+        };
+
+        rePreview: rePreview {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp P>;
+            label = "REPREVIEW";
+        };
+
+        find: find {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp F>;
+            label = "FIND";
+        };
+
+        save: save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp S>;
+            label = "SAVE";
         };
     };
 
@@ -70,7 +165,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-            tap-ms = <20>;
+            tap-ms = <10>;
         };
     };
 
@@ -80,9 +175,9 @@
         default_layer {
             bindings = <
 &kp Q               &kp W         &kp E             &kp R           &kp T                                                                              &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A               &kp S         &kp D             &kp F           &kp G        &kp LS(LG(S))                             &kp MINUS                   &kp H        &kp J  &kp K      &kp L    &kp SQT
-&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V           &kp B        &mt LEFT_SHIFT COLON                      &kp SEMICOLON               &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &kp LEFT_SHIFT  &lt 2 SPACE  &lt_to_layer_0 3 LANG_ZENKAKUHANKAKU      &lt_to_layer_0 4 BACKSPACE  &lt 1 ENTER                             &kp BACKSLASH
+&kp A               &kp S         &kp D             &kp F           &kp G        &trans                                    &kp MINUS                   &kp H        &kp J  &kp K      &kp L    &kp SQT
+&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V           &kp B        &kp GLOBE                                 &kp SEMICOLON               &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &kp LEFT_SHIFT  &lt 2 SPACE  &lt_to_layer_0 3 LANG_ZENKAKUHANKAKU      &lt_to_layer_0 4 BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -90,19 +185,19 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&trans       &smaller  &bigger  &valDown  &volUp                           &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&selectAll   &indent   &clean   &build    &run        &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&screenshot  &save     &find    &open     &rePreview  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&trans       &trans    &trans   &trans    &trans      &trans      &trans   &trans                          &kp F12
             >;
         };
 
         NUM {
             bindings = <
-&kp KP_NUMBER_7             &kp KP_NUMBER_8  &kp KP_NUMBER_9   &kp MINUS        &kp PLUS                                                      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE      &kp QUESTION  &kp EXCLAMATION
-&kp KP_NUMBER_4             &kp KP_NUMBER_5  &kp KP_NUMBER_6   &kp KP_DIVIDE    &kp ASTERISK     &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HASH       &kp DOLLAR    &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2   &kp KP_NUMBER_3  &kp EXCLAMATION  &kp EQUAL                    &trans          &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AMPERSAND  &kp AT_SIGN   &kp BACKSLASH
-&kp LEFT_CONTROL            &kp LEFT_ALT     &kp LEFT_COMMAND  &trans           &trans           &trans                       &trans          &trans                                                                    &kp PIPE
+&kp KP_NUMBER_7             &kp KP_NUMBER_8  &kp KP_NUMBER_9   &kp MINUS        &kp PLUS                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE      &kp QUESTION  &kp EXCLAMATION
+&kp KP_NUMBER_4             &kp KP_NUMBER_5  &kp KP_NUMBER_6   &kp KP_DIVIDE    &kp ASTERISK     &trans         &kp UNDERSCORE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HASH       &kp DOLLAR    &kp PERCENT
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2   &kp KP_NUMBER_3  &kp EXCLAMATION  &kp EQUAL      &trans          &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AMPERSAND  &kp AT_SIGN   &kp BACKSLASH
+&kp LEFT_CONTROL            &kp LEFT_ALT     &kp LEFT_COMMAND  &trans           &trans           &trans         &trans          &trans                                                                    &kp PIPE
             >;
         };
 
