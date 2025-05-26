@@ -72,105 +72,210 @@
         bigger: bigger {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp PLUS>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp PLUS>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "BIGGER";
         };
 
         smaller: smaller {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp MINUS>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp MINUS>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "SMALLER";
         };
 
         build: build {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp B>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp B>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "BUILD";
         };
 
         run: run {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp R>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp R>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "RUN";
         };
 
         indent: indent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp I>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp I>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
             label = "INDENT";
         };
 
         selectAll: selectAll {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp A>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp A>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "SELECTALL";
         };
 
         clean: crean {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp K>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp K>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT>;
+
             label = "CREAN";
         };
 
         open: open {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp O>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp O>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT>;
+
             label = "OPEN";
         };
 
         rePreview: rePreview {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp P>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp P>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "REPREVIEW";
         };
 
         find: find {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp F>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp F>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "FIND";
         };
 
         save: save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp S>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "SAVE";
         };
 
         jump: jump {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp J>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp J>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "JUMP";
         };
 
         mission_controll: mission_controll {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp UP>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp UP>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
             label = "MISSION_CONTROLL";
         };
 
         raycast: raycast {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp SPACE>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp SPACE>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
             label = "RAYCAST";
         };
 
         translate: translate {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp SPACE>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp SPACE>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>;
+
             label = "TRANSLATE";
         };
     };
