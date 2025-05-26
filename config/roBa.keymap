@@ -21,24 +21,29 @@
             key-positions = <11 10>;
         };
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
-
         esc {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
+        };
+
+        mission_controll {
+            bindings = <&mission_controll>;
+            key-positions = <22 23>;
+        };
+
+        server {
+            bindings = <&kp K_SCREENSAVER>;
+            key-positions = <8 9>;
+        };
+
+        refeshable {
+            bindings = <&kp K_REFRESH>;
+            key-positions = <21 20>;
+        };
+
+        raycast {
+            bindings = <&raycast>;
+            key-positions = <33 32>;
         };
     };
 
@@ -55,20 +60,6 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_COMMAND &kp KP_NUMBER_3>;
             label = "SCREENSHOT";
-        };
-
-        volUp: volUp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp PLUS>;
-            label = "VOLUP";
-        };
-
-        valDown: valDown {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp MINUS>;
-            label = "VALDOWN";
         };
 
         bigger: bigger {
@@ -147,6 +138,34 @@
             bindings = <&kp LEFT_COMMAND &kp S>;
             label = "SAVE";
         };
+
+        jump: jump {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp J>;
+            label = "JUMP";
+        };
+
+        mission_controll: mission_controll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp UP>;
+            label = "MISSION_CONTROLL";
+        };
+
+        raycast: raycast {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp SPACE>;
+            label = "RAYCAST";
+        };
+
+        translate: translate {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp SPACE>;
+            label = "TRANSLATE";
+        };
     };
 
     behaviors {
@@ -165,7 +184,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-            tap-ms = <10>;
+            tap-ms = <5>;
         };
     };
 
@@ -174,10 +193,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W         &kp E             &kp R                        &kp T                                                                              &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A               &kp S         &kp D             &kp F                        &kp G        &trans                                    &kp MINUS                   &kp H        &kp J  &kp K      &kp L    &kp SQT
-&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V                        &kp B        &kp GLOBE                                 &kp SEMICOLON               &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &lt_to_layer_0 4 LEFT_SHIFT  &lt 2 SPACE  &lt_to_layer_0 3 LANG_ZENKAKUHANKAKU      &lt_to_layer_0 4 BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT BACKSLASH
+&kp Q               &kp W         &kp E             &kp R             &kp T                                          &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&kp A               &kp S         &kp D             &kp F             &kp G        &kp C_AC_OPEN      &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
+&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V             &kp B        &translate         &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 4 LEFT_SHIFT  &lt 2 SPACE  &lt 3 TAB          &kp BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -185,10 +204,10 @@
 
         FUNCTION {
             bindings = <
-&trans       &smaller  &bigger  &valDown  &volUp                           &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&selectAll   &indent   &clean   &build    &run        &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&screenshot  &save     &find    &open     &rePreview  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans       &trans    &trans   &trans    &trans      &trans      &trans   &trans                          &kp F12
+&kp ESC      &smaller  &bigger  &kp C_VOLUME_DOWN  &kp C_VOL_UP                          &trans  &trans  &trans  &trans  &trans
+&selectAll   &indent   &clean   &build             &run          &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&screenshot  &save     &find    &open              &jump         &rePreview      &trans  &trans  &trans  &trans  &trans  &trans
+&trans       &trans    &trans   &trans             &trans        &trans          &trans  &trans                          &trans
             >;
         };
 
@@ -203,10 +222,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                          &trans
+&trans  &trans  &trans    &kp UP    &trans                         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans     &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans     &trans      &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
