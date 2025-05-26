@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 5
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
@@ -305,10 +305,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W         &kp E             &kp R               &kp T                                          &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A               &kp S         &kp D             &kp F               &kp G        &kp C_AC_OPEN      &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V               &kp B        &kp COLON          &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &mt LEFT_SHIFT TAB  &lt 2 SPACE  &translate         &kp BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT BACKSLASH
+&kp Q               &kp W         &kp E             &kp R               &kp T                                       &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&kp A               &kp S         &kp D             &kp F               &kp G        &kp ENTER       &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
+&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V               &kp B        &kp COLON       &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &mt LEFT_SHIFT TAB  &lt 2 SPACE  &translate      &kp BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
