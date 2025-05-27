@@ -38,12 +38,37 @@
 
         refeshable {
             bindings = <&kp K_REFRESH>;
-            key-positions = <21 20>;
+            key-positions = <5 6>;
         };
 
         raycast {
             bindings = <&raycast>;
             key-positions = <33 32>;
+        };
+
+        string {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <21 20>;
+        };
+
+        up {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <13 14>;
+        };
+
+        down {
+            bindings = <&kp DOWN>;
+            key-positions = <26 25>;
+        };
+
+        right {
+            bindings = <&kp RIGHT>;
+            key-positions = <26 27>;
+        };
+
+        left {
+            bindings = <&kp LEFT>;
+            key-positions = <25 24>;
         };
     };
 
@@ -125,34 +150,6 @@
             label = "RUN";
         };
 
-        indent: indent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_CONTROL>,
-                <&macro_tap>,
-                <&kp I>,
-                <&macro_release>,
-                <&kp LEFT_CONTROL>;
-
-            label = "INDENT";
-        };
-
-        selectAll: selectAll {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_COMMAND>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LEFT_COMMAND>;
-
-            label = "SELECTALL";
-        };
-
         clean: crean {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -186,11 +183,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_COMMAND>,
+                <&kp LEFT_COMMAND &kp LEFT_ALT>,
                 <&macro_tap>,
                 <&kp P>,
                 <&macro_release>,
-                <&kp LEFT_COMMAND>;
+                <&kp LEFT_COMMAND &kp LEFT_ALT>;
 
             label = "REPREVIEW";
         };
@@ -228,11 +225,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_COMMAND>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT>,
                 <&macro_tap>,
                 <&kp J>,
                 <&macro_release>,
-                <&kp LEFT_COMMAND>;
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT>;
 
             label = "JUMP";
         };
@@ -278,6 +275,26 @@
 
             label = "TRANSLATE";
         };
+
+        allIndent: allIndent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp A>,
+                <&macro_release>,
+                <&kp LEFT_COMMAND>,
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp I>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "ALLINDENT";
+        };
     };
 
     behaviors {
@@ -305,10 +322,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W         &kp E             &kp R               &kp T                                       &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A               &kp S         &kp D             &kp F               &kp G        &kp ENTER       &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V               &kp B        &kp COLON       &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &mt LEFT_SHIFT TAB  &lt 2 SPACE  &translate      &kp BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT BACKSLASH
+&kp Q               &kp W         &kp E             &kp R               &kp T                                         &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&kp A               &kp S         &kp D             &kp F               &kp G        &trans            &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
+&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V               &kp B        &kp EQUAL         &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &mt LEFT_SHIFT TAB  &lt 2 SPACE  &lt 3 PERIOD      &kp BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -317,7 +334,7 @@
         FUNCTION {
             bindings = <
 &kp ESC      &smaller  &bigger  &kp C_VOLUME_DOWN  &kp C_VOL_UP                          &trans  &trans  &trans  &trans  &trans
-&selectAll   &indent   &clean   &build             &run          &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&allIndent   &clean    &trans   &build             &run          &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &screenshot  &save     &find    &open              &jump         &rePreview      &trans  &trans  &trans  &trans  &trans  &trans
 &trans       &trans    &trans   &trans             &trans        &trans          &trans  &trans                          &trans
             >;
