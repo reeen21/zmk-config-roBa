@@ -305,10 +305,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W         &kp E             &kp R               &kp T                                       &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A               &kp S         &kp D             &kp F               &kp G        &kp ENTER       &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V               &kp B        &kp COLON       &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &mt LEFT_SHIFT TAB  &lt 2 SPACE  &translate      &kp BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT BACKSLASH
+&kp Q               &kp W         &kp E             &kp R               &kp T                                         &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&kp A               &kp S         &kp D             &kp F               &kp G        &trans            &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
+&lt_to_layer_0 4 Z  &kp X         &kp C             &kp V               &kp B        &lt 3 EQUAL       &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL           &kp LEFT_ALT  &kp LEFT_COMMAND  &mt LEFT_SHIFT TAB  &lt 2 SPACE  &lt 4 PERIOD      &kp BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -327,7 +327,7 @@
             bindings = <
 &kp KP_NUMBER_7             &kp KP_NUMBER_8  &kp KP_NUMBER_9   &kp MINUS        &kp PLUS                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE      &kp QUESTION  &kp EXCLAMATION
 &kp KP_NUMBER_4             &kp KP_NUMBER_5  &kp KP_NUMBER_6   &kp KP_DIVIDE    &kp ASTERISK     &trans         &kp UNDERSCORE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HASH       &kp DOLLAR    &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2   &kp KP_NUMBER_3  &kp EXCLAMATION  &kp EQUAL      &kp TILDE       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AMPERSAND  &kp AT_SIGN   &kp BACKSLASH
+&mt LEFT_SHIFT KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3   &kp KP_NUMBER_0  &kp EXCLAMATION  &kp EQUAL      &kp TILDE       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AMPERSAND  &kp AT_SIGN   &kp BACKSLASH
 &kp LEFT_CONTROL            &kp LEFT_ALT     &kp LEFT_COMMAND  &trans           &trans           &trans         &trans          &trans                                                                    &kp PIPE
             >;
         };
