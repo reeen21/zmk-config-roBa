@@ -325,10 +325,10 @@
 
         NUM {
             bindings = <
-&kp KP_NUMBER_7             &kp KP_NUMBER_8  &kp KP_NUMBER_9   &kp MINUS        &kp PLUS                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE      &kp QUESTION  &kp EXCLAMATION
-&kp KP_NUMBER_4             &kp KP_NUMBER_5  &kp KP_NUMBER_6   &kp KP_DIVIDE    &kp ASTERISK     &trans         &kp UNDERSCORE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HASH       &kp DOLLAR    &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3   &kp KP_NUMBER_0  &kp EXCLAMATION  &kp EQUAL      &kp TILDE       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AMPERSAND  &kp AT_SIGN   &kp BACKSLASH
-&kp LEFT_CONTROL            &kp LEFT_ALT     &kp LEFT_COMMAND  &trans           &trans           &trans         &trans          &trans                                                                    &kp PIPE
+&kp KP_NUMBER_7             &kp KP_NUMBER_8  &kp KP_NUMBER_9   &kp MINUS        &kp PLUS                                     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE      &kp QUESTION  &kp EXCLAMATION
+&kp KP_NUMBER_4             &kp KP_NUMBER_5  &kp KP_NUMBER_6   &kp KP_DIVIDE    &kp ASTERISK  &trans         &kp UNDERSCORE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HASH       &kp DOLLAR    &kp PERCENT
+&mt LEFT_SHIFT KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3   &kp KP_NUMBER_0  &kp GRAVE     &kp EQUAL      &kp TILDE       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AMPERSAND  &kp AT_SIGN   &kp BACKSLASH
+&kp LEFT_CONTROL            &kp LEFT_ALT     &kp LEFT_COMMAND  &trans           &trans        &trans         &trans          &trans                                                                    &kp PIPE
             >;
         };
 
